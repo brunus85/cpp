@@ -5,13 +5,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import cpp.controller.Tarefa;
 
-public class ControleDeProcessos implements Tarefa{
+public class EntradaProcessos implements Tarefa {
 
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response) {
-		
-		return "/WEB-INF/paginas/controleprocessos.jsp";
+		// TODO Auto-generated method stub
+		return "/WEB-INF/paginas/entrada_processos.jsp";
 	}
-	
 
 }
