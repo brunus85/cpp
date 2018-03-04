@@ -1,3 +1,17 @@
+/*
+ * 
+ * Classname				Controller
+ * 
+ * Version information		0.1
+ * 
+ * Date						25/02/2018 - 23:50
+ * 
+ * author					Bruno Lazaro dos Santos
+ * Copyright notice			Um controlador que identifica quais as requisições do usuário 
+ * 							para então encaminhar para a classe desejada e possibilitar a aplicação
+ * 							do conceito MVC.
+ */
+
 package cpp.controller;
 
 import java.io.IOException;
@@ -23,7 +37,7 @@ public class Controller extends HttpServlet {
 
 		try {
 			String nomeDaclasse = "cpp.web." + tarefa;
-			Class type = Class.forName(nomeDaclasse);
+			Class<?> type = Class.forName(nomeDaclasse);
 			Tarefa instancia = (Tarefa) type.newInstance();
 			
 			String pagina = instancia.executa(req, resp);
