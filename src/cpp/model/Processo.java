@@ -16,6 +16,11 @@ public class Processo {
 	public Processo(String num_processo) {
 		this.num_processo = num_processo;
 	}
+
+	public String buscaProcesso(String num_proc) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 
 }

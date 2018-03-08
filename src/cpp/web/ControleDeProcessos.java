@@ -10,7 +10,7 @@ public class ControleDeProcessos implements Tarefa{
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response) {
 		
-		return "/WEB-INF/paginas/controleprocessos.jsp";
+		return "/WEB-INF/paginas/controleProcessos.jsp";
 	}
 	
 

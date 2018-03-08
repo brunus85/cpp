@@ -10,7 +10,7 @@ public class EntradaProcessos implements Tarefa {
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
-		return "/WEB-INF/paginas/entrada_processos.jsp";
+		return "/WEB-INF/paginas/controleProcessos_entrada.jsp";
 	}
 
 }
