@@ -1,6 +1,12 @@
 package cpp.model;
 
-import com.sun.xml.internal.ws.api.config.management.policy.ManagementAssertion.Setting;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import cpp.dao.ProcessoDAO;
+import cpp.jdbc.ConnectionPool;
+
 public class Processo {
 
 	Integer id;
@@ -8,18 +14,20 @@ public class Processo {
 	String num_processo;
 	Integer id_vara;
 	String classe;
-	Setting assunto;
+	String assunto;
 	String distribuicao;
 	String autor;
 	String denunciado;
-	
-	public Processo(String num_processo) {
-		this.num_processo = num_processo;
+
+	public void setNumProc(String num_proc) {
+		this.num_processo = num_proc;
+		
 	}
 
-	public String buscaProcesso(String num_proc) {
-		// TODO Auto-generated method stub
-		return null;
+
+	public void setId(int id) {
+		this.id = id;
+		
 	}
 	
 

@@ -1,10 +1,12 @@
 package cpp.dao;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.mysql.jdbc.Connection;
 
+import cpp.model.Processo;
 
 public class ProcessoDAO {
 
@@ -14,14 +16,23 @@ public class ProcessoDAO {
 		this.connection = (Connection) conn;
 	}
 
-	public boolean consultaprocesso(String num_proc) throws SQLException {
-		Boolean resultado;
+	public Processo buscaPorProcesso(String num_proc) throws SQLException {
 		String sql = "select * from processo where num_proc = ?";
+		
+		Processo processo;
 		try (PreparedStatement statement = connection.prepareStatement(sql)) {
 			statement.setString(1, "num_proc");
-			resultado = statement.execute();
-
+			
+			statement.execute();
+			ResultSet rs = statement.getResultSet();
+			
+			processo = new Processo();
+			if(rs.next()) {
+				processo.setId(rs.getInt("id"));
+				processo.setNumProc(rs.getString("num_proc"));
+				
+			}
 		}
-		return resultado;
+		return processo;
 	}
 }
