@@ -4,14 +4,14 @@ package cpp.jdbc;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import com.mchange.v2.c3p0.ComboPooledDataSource;
+import com.mchange.v2.c3p0.*;
 
 public class ConnectionPool {
 	
 	private ComboPooledDataSource dataSource;
 
 	public ConnectionPool() throws Throwable {
-		
+		//Class.forName("com.mysql.jdbc.Driver");
 		ComboPooledDataSource pool = new ComboPooledDataSource();
 		pool.setDriverClass("com.mysql.jdbc.Driver");
 		pool.setUser("root");

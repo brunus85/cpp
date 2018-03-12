@@ -11,7 +11,7 @@ import cpp.dao.ProcessoDAO;
 import cpp.jdbc.ConnectionPool;
 import cpp.model.Processo;
 
-public class RegistraEntrada implements Tarefa {
+public class VerificaProcesso implements Tarefa {
 
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response)  {
@@ -19,18 +19,20 @@ public class RegistraEntrada implements Tarefa {
 		
 		//pega o campo num_processo do formulário
 		String num_proc = request.getParameter("num_processo");
-		System.out.println("Valor da variável num_proc" + num_proc);
 
 		try (Connection conn = new ConnectionPool().getConnection()) {
 			
 			ProcessoDAO dao = new ProcessoDAO(conn);
 			Processo processo = dao.buscaPorProcesso(num_proc);
 			
-			
-			if (processo.getNumProc() != null) {
-				acao = "/WEB-INF/paginas/controleProcesso_registraEntrada.jsp";
+			if(processo != null) {
+				System.out.println("Id do Processo: "+ processo.getId()+ " número: "+processo.getNumProc());
+				request.setAttribute("id", processo.getId());
+				request.setAttribute("num_proc", processo.getNumProc());
+				
+				acao = "/WEB-INF/paginas/cp_registraMovimento.jsp";
 			} else {
-				acao = "/WEB-INF/paginas/ControleProcesso_registraProcesso.jsp";
+				acao = "/WEB-INF/paginas/cp_registraProcessoMovimento.jsp";
 			}
 			
 			

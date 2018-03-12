@@ -31,4 +31,8 @@ public class Processo {
 
 	}
 
+	public Integer getId() {
+		return this.id;
+	}
+
 }

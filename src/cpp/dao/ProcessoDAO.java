@@ -20,21 +20,21 @@ public class ProcessoDAO {
 
 		Processo processo = null;
 		try (PreparedStatement statement = connection.prepareStatement(sql)) {
-			statement.setString(1, "num_proc");
+			statement.setString(1, num_proc);
 
-			if (statement.execute()) {
-				processo = new Processo(num_proc);
-				
-				try(ResultSet rs = statement.getResultSet()){
+			statement.execute();
+
+			try (ResultSet rs = statement.getResultSet()) {
+
+				if (rs.next()) {
+					Integer id = rs.getInt("id");
+					String n = rs.getString("num_proc");
 					
-					if (rs.next()) {
-						processo.setId(rs.getInt("id"));
-					}
+					processo = new Processo(n);
+					processo.setId(id);
 				}
-
-
 			}
-			
+
 		}
 		return processo;
 	}

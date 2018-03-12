@@ -31,7 +31,8 @@ public class TestaPool implements Tarefa {
 							processo = new Processo(rs.getString("num_proc"));
 							processo.setId(rs.getInt("id"));
 							
-							request.setAttribute("processo", processo);
+							request.setAttribute("id", processo.getId());
+							request.setAttribute("num_proc", processo.getNumProc());
 						}
 					}
 
@@ -42,7 +43,7 @@ public class TestaPool implements Tarefa {
 			System.out.println("Entrou numa exception SQL");
 			e.printStackTrace();
 		} catch (Throwable e) {
-			System.out.println("Estou NA THROWABLE");
+			System.out.println("Estou NA THROWABLE" + e);
 			e.printStackTrace();
 		}
 		return "/WEB-INF/paginas/controleProcessos_registraEntrada.jsp";

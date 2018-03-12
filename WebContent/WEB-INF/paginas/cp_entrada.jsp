@@ -9,7 +9,7 @@
 <body>
 	<h1>Entrada de Processos</h1>
 
-	<form action="executa?tarefa=RegistraEntrada" method="post">
+	<form action="executa?tarefa=VerificaProcesso" method="post">
 		<label>Número do Processo:</label> 
 		<input type="text" name="num_processo" maxlength="26" size="26">
 		<input type="submit" value="Registrar">

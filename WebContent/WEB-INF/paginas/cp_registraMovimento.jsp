@@ -8,5 +8,9 @@
 </head>
 <body>
 <h1>Registra a movimentação de entrada do processo existente</h1>
+<ul>
+	<li>Id: ${id}</li>
+	<li>Processo: ${num_proc }</li>
+</ul>
 </body>
 </html>
