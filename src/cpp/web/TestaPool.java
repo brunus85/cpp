@@ -39,7 +39,7 @@ public class TestaPool implements Tarefa {
 
 			}
 		} catch (SQLException e) {
-			System.out.println("Estou numa exception SQL");
+			System.out.println("Entrou numa exception SQL");
 			e.printStackTrace();
 		} catch (Throwable e) {
 			System.out.println("Estou NA THROWABLE");
