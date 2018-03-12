@@ -1,12 +1,5 @@
 package cpp.model;
 
-
-import java.sql.Connection;
-import java.sql.SQLException;
-
-import cpp.dao.ProcessoDAO;
-import cpp.jdbc.ConnectionPool;
-
 public class Processo {
 
 	Integer id;
@@ -19,16 +12,23 @@ public class Processo {
 	String autor;
 	String denunciado;
 
-	public void setNumProc(String num_proc) {
-		this.num_processo = num_proc;
-		
+	public Processo(String num_processo) {
+		super();
+		this.num_processo = num_processo;
 	}
 
+	public void setNumProc(String num_proc) {
+		this.num_processo = num_proc;
+
+	}
+	
+	public String getNumProc() {
+		return this.num_processo;
+	}
 
 	public void setId(int id) {
 		this.id = id;
-		
+
 	}
-	
 
 }

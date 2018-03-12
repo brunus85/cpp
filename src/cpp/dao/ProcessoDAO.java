@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-
 import cpp.model.Processo;
 
 public class ProcessoDAO {
@@ -18,20 +17,24 @@ public class ProcessoDAO {
 
 	public Processo buscaPorProcesso(String num_proc) throws SQLException {
 		String sql = "select * from processo where num_proc = ?";
-		
-		Processo processo;
+
+		Processo processo = null;
 		try (PreparedStatement statement = connection.prepareStatement(sql)) {
 			statement.setString(1, "num_proc");
-			
-			statement.execute();
-			ResultSet rs = statement.getResultSet();
-			
-			processo = new Processo();
-			if(rs.next()) {
-				processo.setId(rs.getInt("id"));
-				processo.setNumProc(rs.getString("num_proc"));
+
+			if (statement.execute()) {
+				processo = new Processo(num_proc);
 				
+				try(ResultSet rs = statement.getResultSet()){
+					
+					if (rs.next()) {
+						processo.setId(rs.getInt("id"));
+					}
+				}
+
+
 			}
+			
 		}
 		return processo;
 	}
