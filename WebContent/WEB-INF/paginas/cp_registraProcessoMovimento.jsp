@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link type="text/css" href="${request.contextPath}/css/cpp.css" rel="stylesheet">
+<link type="text/css" href="/cpp/estilo/cpp.css" rel="stylesheet">
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Registrar Processo - Novo Processo</title>
@@ -12,7 +12,6 @@
 <body>
 
 	<h1>Grava o processo e sua movimentação de entrada</h1>
-
 	<form method="post" action="executa?tarefa=GravaProcessoMovimento">
 		<fieldset>
 			<legend>Cadastro do Processo</legend>

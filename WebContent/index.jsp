@@ -4,12 +4,14 @@
 <html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<link type="text/css" href="css/cpp.css" rel="stylesheet">
-	<title>Controle de Processos e Produtividade - CPP</title>
+	
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link type="text/css" href="${pageContext.request.contextPath}/estilo/cpp.css" rel="stylesheet">
+<title>Controle de Processos e Produtividade - CPP</title>
 </head>
 <body>
 	<h1>Bem Vindo ao Controle de Processos e Produtividade</h1>
+	${pageContext.request.contextPath}/estilo/cpp.css
 	<h3>Defensoria Pública - Pimenta Bueno/RO</h3>
 
 	<form action="executa?tarefa=ControleDeProcessos" method="post">
