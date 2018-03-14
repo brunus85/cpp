@@ -16,7 +16,7 @@
 		<fieldset>
 			<legend>Cadastro do Processo</legend>
 			
-				<label for="num_proc">Número do Processo:</label> 
+				<label for="num_proc">N. Processo:</label> 
 				<input type="text" id="num_proc" name="num_proc"> <br />
 				
 				<label for="comarca">Comarca:</label> 
