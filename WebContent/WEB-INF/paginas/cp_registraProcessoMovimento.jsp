@@ -24,9 +24,11 @@
 				
 				<label	for="id_vara">Vara:</label> 
 				<select id="id_vara" name="id_vara">
-					<option id="id_vara" value="1">Vara Criminal</option>
-					<option id="id_vara" value="2">1ª Vara Cível</option>
-					<option id="id_vara" value="3">2ª Vara Cível</option>
+				
+					<c:forEach var="v" items="${varaList}">
+						<option id="id_vara" value="${v.id}">${v.descricao}</option>
+					</c:forEach>
+
 				</select> <br />
 				
 				<label for="classe">Classe:</label> 
@@ -42,8 +44,25 @@
 				<input type="text" id="autor" name="autor"> <br />
 				
 				<label for="denunciado" id="denunciado">Parte:</label>
-				<input type="text" name="denunciado">
+				<input type="text" name="denunciado"> <br/>
+				
 		</fieldset>
+		<fieldset>
+			<legend>Movimentação</legend>
+			
+			<input type="hidden" name="id_processo	">
+			
+			<label for="manifestacao">Manifestação</label>
+			<input type="text" id="manifestacao" name="manifestacao" value="Para análise"><br/>
+			
+			<label for="destino"></label>
+			<select id="destino" name="destino">
+				<option id="destino" value="Setor Criminal">Setor Criminal</option>
+				<option id="destino" value="Setor Cível">Setor Cível</option>
+			</select><br/>
+		
+		</fieldset>
+		<input type="submit" value="Registrar Entrada">
 	</form>
 </body>
 </html>
