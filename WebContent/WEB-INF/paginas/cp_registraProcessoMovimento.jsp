@@ -55,11 +55,14 @@
 			<label for="manifestacao">Manifestação</label>
 			<input type="text" id="manifestacao" name="manifestacao" value="Para análise"><br/>
 			
-			<label for="destino"></label>
+			<label for="destino">Destino:</label>
 			<select id="destino" name="destino">
 				<option id="destino" value="Setor Criminal">Setor Criminal</option>
 				<option id="destino" value="Setor Cível">Setor Cível</option>
 			</select><br/>
+			
+			<label for="data">Data:</label>
+			<input type="date" id="data" name="data">
 		
 		</fieldset>
 		<input type="submit" value="Registrar Entrada">
