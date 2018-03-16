@@ -17,14 +17,14 @@
 			<legend>Cadastro do Processo</legend>
 			
 				<label for="num_proc">N. Processo:</label> 
-				<input type="text" id="num_proc" name="num_proc"> <br />
+				<input type="text" id="num_proc" value="${num_proc}" name="num_proc"> <br />
 				
 				<label for="comarca">Comarca:</label> 
-				<input type="text" id="comarca" name="comarca"> <br />
+				<input type="text" id="comarca" name="comarca" value="Pimenta Bueno"> <br />
 				
 				<label	for="id_vara">Vara:</label> 
 				<select id="id_vara" name="id_vara">
-				
+					<option id="id_vara" value="" selected="selected">--</option>
 					<c:forEach var="v" items="${varaList}">
 						<option id="id_vara" value="${v.id}">${v.descricao}</option>
 					</c:forEach>

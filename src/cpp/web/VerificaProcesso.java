@@ -39,6 +39,7 @@ public class VerificaProcesso implements Tarefa {
 				VaraDAO varaDAO = new VaraDAO(conn);
 				List<Vara> varas = varaDAO.listaVaras();
 				
+				request.setAttribute("num_proc", num_proc);
 				request.setAttribute("varaList", varas);
 				
 				acao = "/WEB-INF/paginas/cp_registraProcessoMovimento.jsp";
