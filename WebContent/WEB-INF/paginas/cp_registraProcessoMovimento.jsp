@@ -61,6 +61,14 @@
 				<option id="destino" value="Setor Cível">Setor Cível</option>
 			</select><br/>
 			
+			<label for="responsavel">Responsável:</label>
+			<select id="responsavel" name="responsavel">
+				<option id="responsavel" value="Heverson">Heverson</option>
+				<option id="responsavel" value="Taynara">Taynara</option>
+				<option id="responsavel" value="Flávio">Flávio</option>
+				<option id="responsavel" value="Rogério">Rogério</option>
+			</select><br/>
+			
 			<label for="data">Data:</label>
 			<input type="date" id="data" name="data">
 		
