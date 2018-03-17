@@ -74,10 +74,10 @@ CREATE TABLE `movimento` (
   `id_processo` int(11) NOT NULL,
   `manifestacao` varchar(255) NOT NULL,
   `destino` varchar(50) NOT NULL,
-  `responsavel` int(11) DEFAULT NULL,
-  `data` date NOT NULL,
+  `responsavel` varchar(255) DEFAULT NULL,
+  `data` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -86,6 +86,7 @@ CREATE TABLE `movimento` (
 
 LOCK TABLES `movimento` WRITE;
 /*!40000 ALTER TABLE `movimento` DISABLE KEYS */;
+INSERT INTO `movimento` VALUES (1,11,'Para análise','Setor Criminal','Heverson',NULL),(2,12,'Para análise','Setor Cível','Taynara',NULL),(3,13,'Para análise','Setor Cível','Taynara',NULL),(4,14,'Para análise','Setor Criminal','Heverson',NULL);
 /*!40000 ALTER TABLE `movimento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -131,7 +132,7 @@ CREATE TABLE `processo` (
   `autor` varchar(100) DEFAULT NULL,
   `parte` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -140,7 +141,7 @@ CREATE TABLE `processo` (
 
 LOCK TABLES `processo` WRITE;
 /*!40000 ALTER TABLE `processo` DISABLE KEYS */;
-INSERT INTO `processo` VALUES (1,'Pimenta Bueno','10011235520188220009',1,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `processo` VALUES (1,'Pimenta Bueno','10011235520188220009',1,NULL,NULL,NULL,NULL,NULL),(2,'Pimenta Bueno','00002558820188220009',1,'','','','',NULL),(3,'Pimenta Bueno','00000444420148220009',1,'','','','',NULL),(4,'Pimenta Bueno','00000333320138220009',1,'','','','',NULL),(5,'Pimenta Bueno','00000888820188220009',1,'','','','',NULL),(6,'Pimenta Bueno','00000999920198220009',1,'','','','',NULL),(7,'Pimenta Bueno','00000111120118220009',1,'','','','',NULL),(8,'Pimenta Bueno','00000222220128220009',1,'','','','',NULL),(9,'Pimenta Bueno','1111111120188220009',1,'','','','',NULL),(10,'Pimenta Bueno','22222228820188220009',1,'','','','',NULL),(11,'Pimenta Bueno','44444449920188220009',1,'','','','',NULL),(12,'Pimenta Bueno','66666668820188220009',1,'','','','',NULL),(13,'Pimenta Bueno','77777778820188220009',1,'Penal','Roubo','Sorteio','Ministério Público',NULL),(14,'Pimenta Bueno','12312348820188220009',1,'Execução de Pena','Indulto','Sorteio','Ministério Público','Jonyscleyton');
 /*!40000 ALTER TABLE `processo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -203,4 +204,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-17 13:25:28
+-- Dump completed on 2018-03-17 17:08:12

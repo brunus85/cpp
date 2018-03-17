@@ -43,8 +43,8 @@
 				<label for="autor">Autor:</label>
 				<input type="text" id="autor" name="autor"> <br />
 				
-				<label for="denunciado" id="denunciado">Parte:</label>
-				<input type="text" name="denunciado"> <br/>
+				<label for="parte" id="parte">Parte:</label>
+				<input type="text" name="parte"> <br/>
 				
 		</fieldset>
 		<fieldset>
