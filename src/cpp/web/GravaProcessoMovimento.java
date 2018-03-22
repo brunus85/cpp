@@ -40,18 +40,13 @@ public class GravaProcessoMovimento implements Tarefa {
 		String manifestacao = request.getParameter("manifestacao");
 		String destino = request.getParameter("destino");
 		String responsavel = request.getParameter("responsavel");
-		//String data = request.getParameter("data");
-
-		Movimento movimento = new Movimento(id_processo, manifestacao, destino, responsavel);
+		String data = request.getParameter("data");
 
 		try (Connection conn = new ConnectionPool().getConnection()) {
 			ProcessoDAO daoProcesso = new ProcessoDAO(conn);
 			id_processo = daoProcesso.gravaProcesso(processo);
 			
-
-			movimento.setIdProcesso(id_processo);
-			
-			System.out.println(movimento.toString());
+			Movimento movimento = new Movimento(id_processo, manifestacao, destino, responsavel, data);
 			
 			MovimentoDAO movDAO = new MovimentoDAO(conn);
 			movDAO.gravaMovimento(movimento);

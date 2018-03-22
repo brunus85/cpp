@@ -14,14 +14,14 @@ public class MovimentoDAO {
 	}
 
 	public void gravaMovimento(Movimento movimento) throws SQLException {
-		String sql = "INSERT INTO movimento (id_processo, manifestacao, destino, responsavel) VALUES (?, ?, ?, ?)";
+		String sql = "INSERT INTO movimento (id_processo, manifestacao, destino, responsavel, data) VALUES (?, ?, ?, ?, ?)";
 		
 		try(PreparedStatement statement = this.connection.prepareStatement(sql)) {
 			statement.setInt(1, movimento.getIdProcesso());
 			statement.setString(2, movimento.getManifestacao());
 			statement.setString(3, movimento.getDestino());
 			statement.setString(4, movimento.getResponsavel());
-			//statement.setString(5, movimento.getData());
+			statement.setDate(5, new java.sql.Date(movimento.getData().getTime()));
 			
 			statement.execute();
 		}
