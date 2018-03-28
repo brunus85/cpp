@@ -1,5 +1,7 @@
 package cpp.model;
 
+import java.util.List;
+
 public class Processo {
 
 	Integer id;
@@ -11,6 +13,7 @@ public class Processo {
 	String distribuicao;
 	String autor;
 	String parte;
+	List<Movimento> movimento;
 
 	public Processo(String num_processo) {
 		super();
@@ -89,6 +92,11 @@ public class Processo {
 
 	public void setParte(String parte) {
 		this.parte = parte;
+	}
+
+	public void setMovimento(Movimento movimento) {
+		this.movimento.add(movimento);
+		
 	}
 
 }

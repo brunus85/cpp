@@ -11,7 +11,7 @@
 
 	<a href="<c:url value='executa?tarefa=EntradaProcessos'></c:url>">Entrada	de Processos</a>
 	<br>
-	<a href="<c:url value='/cpp/controleDeTarefas'></c:url>">Saída de Processo</a>
+	<a href="<c:url value='executa?tarefa=MovimentoProcessos'></c:url>">Movimento de Processo</a>
 	<br>
 	<a href="<c:url value='/cpp/controleDeTarefas'></c:url>">Emitir 2ª Vida de Certidão de Saída</a>
 

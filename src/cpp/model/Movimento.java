@@ -4,18 +4,29 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Movimento {
+	Integer id;
 	Integer id_processo;
 	String manifestacao;
 	String destino;
 	String responsavel;
 	Date data;
 
-	public Movimento(Integer id_processo, String manifestacao, String destino, String responsavel, String campoData) throws Throwable {
+	public Movimento(Integer id_processo, String manifestacao, String destino, String responsavel, String campoData)
+			throws Throwable {
 		this.id_processo = id_processo;
 		this.manifestacao = manifestacao;
 		this.destino = destino;
 		this.responsavel = responsavel;
 		setData(campoData);
+	}
+
+	public Movimento() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public void setId(int id) {
+		this.id = id;
+
 	}
 
 	public Integer getIdProcesso() {
@@ -49,18 +60,16 @@ public class Movimento {
 	public void setResponsavel(String responsavel) {
 		this.responsavel = responsavel;
 	}
-	
+
 	public Date getData() {
-		
+
 		return this.data;
 	}
-	
+
 	public void setData(String campoData) throws Throwable {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		Date data = sdf.parse(campoData);
 		this.data = data;
 	}
-
-	
 
 }
